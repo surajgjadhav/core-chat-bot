@@ -117,9 +117,11 @@ class MainDialog extends ComponentDialog {
             const getDetails = {};
             // Extract the values for entities from the LUIS result.
             const userId = this.luisRecognizer.getUserId(luisResult);
+            const email = this.luisRecognizer.getEmail(luisResult);
 
             // Initialize ChangeDetails with any entities we may have found in the response.
             getDetails.userId = userId;
+            getDetails.email = email;
             console.log('LUIS extracted these booking details:', JSON.stringify(getDetails));
 
             // Run the getUserDetailsDialog passing in whatever details we have from the LUIS call, it will fill out the remainder.
