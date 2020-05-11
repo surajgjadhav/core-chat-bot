@@ -17,6 +17,14 @@ class WelcomeAndDialogBot extends DialogBot {
             // By calling next() you ensure that the next BotHandler is run.
             await next();
         });
+
+        this.onEvent(async (context, next) => {
+            if (context.activity.name === 'webchat/join') {
+                await context.sendActivity('Hey there! Good to see you here.');
+                await dialog.run(context, conversationState.createProperty('DialogState'));
+            }
+            await next();
+        });
     }
 }
 
