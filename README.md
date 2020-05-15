@@ -1,4 +1,4 @@
-# core-chat-bot
+# pisys-chat-bot
 
 Demonstrate the core capabilities of the Microsoft Bot Framework
 
